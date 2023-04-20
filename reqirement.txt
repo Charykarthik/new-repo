@@ -1,2 +1,6 @@
- Function dependencies, for example:
+# Function dependencies, for example:
 # package>=version
+  gcsfs
+  fsspec
+  pandas
+  pandas-gbq
