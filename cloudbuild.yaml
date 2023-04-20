@@ -1,28 +1,10 @@
 steps:
-- name: "gcr.io/cloud-builders/gsutil"
-args:
-- "cp"
-- "-r"
-- "gs://${_STAGING_BUCKET_NAME}/*"
-- "${_DATA_DIR}"
-
-- name: "gcr.io/cloud-builders/gcloud"
-entrypoint: "bash"
-args:
-- "-c"
-- |
-bq load \
---source_format=CSV \
---skip_leading_rows=1 \
---field_delimiter=',' \
-${_BIGQUERY_DATASET}.${_BIGQUERY_TABLE} \
-${_DATA_DIR}/${_DATA_FILE} \
-${_BIGQUERY_SCHEMA}
-
-substitutions:
-_STAGING_BUCKET_NAME: staging-bucket
-_DATA_DIR: /workspace/data
-_BIGQUERY_DATASET: landing_zone
-_BIGQUERY_TABLE: my_table
-_BIGQUERY_SCHEMA: path/to/schema.json
-_DATA_FILE: my_data.csv
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - hello_gcs
+  - --source=.
+  - --trigger-bucket=buk-temp
+  - --runtime=python37
+  - --allow-unauthenticated
