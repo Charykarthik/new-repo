@@ -1,4 +1,6 @@
 steps:
+- name:'gcr.io/cloud-builders/gsuitl'
+  args:['cp','gs://buk-temp/*','bigquery://My First Project/karthikdata.karthik']
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
   - functions
