@@ -5,6 +5,6 @@ steps:
   - deploy
   - hello_gcs
   - --source=.
-  - --trigger-http
+  - --trigger-bucket=sceg_karthik
   - --runtime=python37
   - --allow-unauthenticated
