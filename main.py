@@ -1,6 +1,4 @@
-import pandas as pd
-from pandas . io import gbq
-from google . cloud import bigquery
+
 
 """
 Python Dependendies
