@@ -9,7 +9,7 @@ pandas
 pandas-gbq
 
 """
-def hello_gcs(event, context):
+def hello_gcs(event):
      
 
     
