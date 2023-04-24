@@ -30,7 +30,7 @@ def hello_gcs(event):
         'Bucket_name':event['bucket'],
         'File_name':event['name'],
         'Created':event['timeCreated'],
-        'update':event['update'],
+        'Updated':event['update'],
     }
     lst.append(dct)
     df_metadata = pd.DataFrame.from_records(lst)
