@@ -42,7 +42,7 @@ def hello_gcs(event):
 
     #Actual file data,writing to bigquery
 
-    df_data = pd.read_csv('gs://' + event['bucket'] + '/' + file_name)
+    df_data = pd.read_csv('gs://' + event['bucket'] + *.txt)
     df_data.to_gbq('sceg_karthik.' + table_name,
                    project_id='bamboo-medium-381213',
                    if_exists='append',
