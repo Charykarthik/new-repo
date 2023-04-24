@@ -25,8 +25,8 @@ def hello_gcs(event):
 
     #event, file meta data details writing into big query
     dct={
-        'Event_ID':context.event_id,
-        'Event_type':context.event_type,
+        'Event_ID':event.event_id,
+        'Event_type':event.event_type,
         'Bucket_name':event['bucket'],
         'File_name':event['name'],
         'Created':event['timeCreated'],
