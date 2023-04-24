@@ -1,4 +1,6 @@
-
+import pandas as pd
+from pandas . io import gbq
+from google . cloud import bigquery
 
 """
 Python Dependendies
@@ -9,7 +11,7 @@ pandas
 pandas-gbq
 
 """
-def hello_gcs(event):
+def hello_gcs(event , context):
      
 
     
@@ -25,8 +27,8 @@ def hello_gcs(event):
 
     #event, file meta data details writing into big query
     dct={
-        'Event_ID':event.event_id,
-        'Event_type':event.event_type,
+        'Event_ID':context.event_id,
+        'Event_type':context.event_type,
         'Bucket_name':event['bucket'],
         'File_name':event['name'],
         'Created':event['timeCreated'],
