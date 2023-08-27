@@ -2,17 +2,17 @@
   - id: 'tf init'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform -chdir=GCS init"]
+    args: ["-c","terraform -chdir=gcs init"]
   - id: 'tf validate'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform -chdir=GCS validate"]   
+    args: ["-c","terraform -chdir=gcs validate"]   
   - id: 'tf plan' 
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform -chdir=GCS plan"] 
+    args: ["-c","terraform -chdir=gcs plan"] 
   - id: 'tf apply' 
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: sh
-    args: ["-c","terraform -chdir=GCS apply  -auto-approve "] 
+    args: ["-c","terraform -chdir=gcs apply  -auto-approve "] 
   
