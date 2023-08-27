@@ -3,7 +3,7 @@ resource "google_storage_bucket"{
     project = "modernization"
     location = "us-central1"
     force_destroy = true
-    labels = test,devops
+    
     storage_class = "standard"
 
     iam_configuration{
